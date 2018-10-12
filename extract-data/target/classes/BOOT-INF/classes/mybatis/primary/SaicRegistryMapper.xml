@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.threegolden.cbs.cr.mapper.primary.SaicRegistryMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.threegolden.cbs.cr.entity.primary.SaicRegistry" >
+    <id column="tracing_source" property="tracingSource" jdbcType="INTEGER" />
+    <result column="CREATETIME" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="source_id" property="sourceId" jdbcType="VARCHAR" />
+    <result column="F01010101" property="f01010101" jdbcType="VARCHAR" />
+    <result column="F01010102" property="f01010102" jdbcType="VARCHAR" />
+    <result column="F01010103" property="f01010103" jdbcType="VARCHAR" />
+    <result column="F01010201" property="f01010201" jdbcType="VARCHAR" />
+    <result column="F01010214" property="f01010214" jdbcType="VARCHAR" />
+    <result column="F01010216" property="f01010216" jdbcType="DATE" />
+    <result column="F01010204" property="f01010204" jdbcType="VARCHAR" />
+    <result column="F01010212" property="f01010212" jdbcType="VARCHAR" />
+    <result column="F01010203" property="f01010203" jdbcType="VARCHAR" />
+    <result column="F01010215" property="f01010215" jdbcType="VARCHAR" />
+    <result column="F01010248" property="f01010248" jdbcType="DATE" />
+    <result column="F01010219" property="f01010219" jdbcType="VARCHAR" />
+    <result column="F01010202" property="f01010202" jdbcType="VARCHAR" />
+    <result column="F01010247" property="f01010247" jdbcType="DATE" />
+    <result column="F01010238" property="f01010238" jdbcType="VARCHAR" />
+    <result column="F01010239" property="f01010239" jdbcType="VARCHAR" />
+    <result column="F01010211" property="f01010211" jdbcType="VARCHAR" />
+    <result column="F01010249" property="f01010249" jdbcType="VARCHAR" />
+    <result column="F01010241" property="f01010241" jdbcType="VARCHAR" />
+    <result column="F01010242" property="f01010242" jdbcType="VARCHAR" />
+    <result column="F01010243" property="f01010243" jdbcType="VARCHAR" />
+    <result column="F01010250" property="f01010250" jdbcType="VARCHAR" />
+    <result column="F01010220" property="f01010220" jdbcType="VARCHAR" />
+    <result column="F01010221" property="f01010221" jdbcType="VARCHAR" />
+    <result column="F01010251" property="f01010251" jdbcType="VARCHAR" />
+    <result column="F01010206" property="f01010206" jdbcType="VARCHAR" />
+    <result column="F01010207" property="f01010207" jdbcType="VARCHAR" />
+    <result column="F01010244" property="f01010244" jdbcType="VARCHAR" />
+    <result column="F01010245" property="f01010245" jdbcType="VARCHAR" />
+    <result column="F01010246" property="f01010246" jdbcType="VARCHAR" />
+    <result column="operation_type" property="operationType" jdbcType="VARCHAR" />
+    <result column="INSTDATE" property="instdate" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    tracing_source, CREATETIME, updatetime, source_id, F01010101, F01010102, F01010103, 
+    F01010201, F01010214, F01010216, F01010204, F01010212, F01010203, F01010215, F01010248, 
+    F01010219, F01010202, F01010247, F01010238, F01010239, F01010211, F01010249, F01010241, 
+    F01010242, F01010243, F01010250, F01010220, F01010221, F01010251, F01010206, F01010207, 
+    F01010244, F01010245, F01010246, operation_type, INSTDATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from DM_GDSWT.saic_registry
+    where tracing_source = #{tracingSource,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from DM_GDSWT.saic_registry
+    where tracing_source = #{tracingSource,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.threegolden.cbs.cr.entity.primary.SaicRegistry" >
+    insert into DM_GDSWT.saic_registry (tracing_source, CREATETIME, updatetime, 
+      source_id, F01010101, F01010102, 
+      F01010103, F01010201, F01010214, 
+      F01010216, F01010204, F01010212, 
+      F01010203, F01010215, F01010248, 
+      F01010219, F01010202, F01010247, 
+      F01010238, F01010239, F01010211, 
+      F01010249, F01010241, F01010242, 
+      F01010243, F01010250, F01010220, 
+      F01010221, F01010251, F01010206, 
+      F01010207, F01010244, F01010245, 
+      F01010246, operation_type, INSTDATE
+      )
+    values (#{tracingSource,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, 
+      #{sourceId,jdbcType=VARCHAR}, #{f01010101,jdbcType=VARCHAR}, #{f01010102,jdbcType=VARCHAR}, 
+      #{f01010103,jdbcType=VARCHAR}, #{f01010201,jdbcType=VARCHAR}, #{f01010214,jdbcType=VARCHAR}, 
+      #{f01010216,jdbcType=DATE}, #{f01010204,jdbcType=VARCHAR}, #{f01010212,jdbcType=VARCHAR}, 
+      #{f01010203,jdbcType=VARCHAR}, #{f01010215,jdbcType=VARCHAR}, #{f01010248,jdbcType=DATE}, 
+      #{f01010219,jdbcType=VARCHAR}, #{f01010202,jdbcType=VARCHAR}, #{f01010247,jdbcType=DATE}, 
+      #{f01010238,jdbcType=VARCHAR}, #{f01010239,jdbcType=VARCHAR}, #{f01010211,jdbcType=VARCHAR}, 
+      #{f01010249,jdbcType=VARCHAR}, #{f01010241,jdbcType=VARCHAR}, #{f01010242,jdbcType=VARCHAR}, 
+      #{f01010243,jdbcType=VARCHAR}, #{f01010250,jdbcType=VARCHAR}, #{f01010220,jdbcType=VARCHAR}, 
+      #{f01010221,jdbcType=VARCHAR}, #{f01010251,jdbcType=VARCHAR}, #{f01010206,jdbcType=VARCHAR}, 
+      #{f01010207,jdbcType=VARCHAR}, #{f01010244,jdbcType=VARCHAR}, #{f01010245,jdbcType=VARCHAR}, 
+      #{f01010246,jdbcType=VARCHAR}, #{operationType,jdbcType=VARCHAR}, #{instdate,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.threegolden.cbs.cr.entity.primary.SaicRegistry" >
+    insert into DM_GDSWT.saic_registry
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tracingSource != null" >
+        tracing_source,
+      </if>
+      <if test="createtime != null" >
+        CREATETIME,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
+      <if test="sourceId != null" >
+        source_id,
+      </if>
+      <if test="f01010101 != null" >
+        F01010101,
+      </if>
+      <if test="f01010102 != null" >
+        F01010102,
+      </if>
+      <if test="f01010103 != null" >
+        F01010103,
+      </if>
+      <if test="f01010201 != null" >
+        F01010201,
+      </if>
+      <if test="f01010214 != null" >
+        F01010214,
+      </if>
+      <if test="f01010216 != null" >
+        F01010216,
+      </if>
+      <if test="f01010204 != null" >
+        F01010204,
+      </if>
+      <if test="f01010212 != null" >
+        F01010212,
+      </if>
+      <if test="f01010203 != null" >
+        F01010203,
+      </if>
+      <if test="f01010215 != null" >
+        F01010215,
+      </if>
+      <if test="f01010248 != null" >
+        F01010248,
+      </if>
+      <if test="f01010219 != null" >
+        F01010219,
+      </if>
+      <if test="f01010202 != null" >
+        F01010202,
+      </if>
+      <if test="f01010247 != null" >
+        F01010247,
+      </if>
+      <if test="f01010238 != null" >
+        F01010238,
+      </if>
+      <if test="f01010239 != null" >
+        F01010239,
+      </if>
+      <if test="f01010211 != null" >
+        F01010211,
+      </if>
+      <if test="f01010249 != null" >
+        F01010249,
+      </if>
+      <if test="f01010241 != null" >
+        F01010241,
+      </if>
+      <if test="f01010242 != null" >
+        F01010242,
+      </if>
+      <if test="f01010243 != null" >
+        F01010243,
+      </if>
+      <if test="f01010250 != null" >
+        F01010250,
+      </if>
+      <if test="f01010220 != null" >
+        F01010220,
+      </if>
+      <if test="f01010221 != null" >
+        F01010221,
+      </if>
+      <if test="f01010251 != null" >
+        F01010251,
+      </if>
+      <if test="f01010206 != null" >
+        F01010206,
+      </if>
+      <if test="f01010207 != null" >
+        F01010207,
+      </if>
+      <if test="f01010244 != null" >
+        F01010244,
+      </if>
+      <if test="f01010245 != null" >
+        F01010245,
+      </if>
+      <if test="f01010246 != null" >
+        F01010246,
+      </if>
+      <if test="operationType != null" >
+        operation_type,
+      </if>
+      <if test="instdate != null" >
+        INSTDATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tracingSource != null" >
+        #{tracingSource,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sourceId != null" >
+        #{sourceId,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010101 != null" >
+        #{f01010101,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010102 != null" >
+        #{f01010102,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010103 != null" >
+        #{f01010103,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010201 != null" >
+        #{f01010201,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010214 != null" >
+        #{f01010214,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010216 != null" >
+        #{f01010216,jdbcType=DATE},
+      </if>
+      <if test="f01010204 != null" >
+        #{f01010204,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010212 != null" >
+        #{f01010212,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010203 != null" >
+        #{f01010203,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010215 != null" >
+        #{f01010215,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010248 != null" >
+        #{f01010248,jdbcType=DATE},
+      </if>
+      <if test="f01010219 != null" >
+        #{f01010219,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010202 != null" >
+        #{f01010202,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010247 != null" >
+        #{f01010247,jdbcType=DATE},
+      </if>
+      <if test="f01010238 != null" >
+        #{f01010238,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010239 != null" >
+        #{f01010239,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010211 != null" >
+        #{f01010211,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010249 != null" >
+        #{f01010249,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010241 != null" >
+        #{f01010241,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010242 != null" >
+        #{f01010242,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010243 != null" >
+        #{f01010243,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010250 != null" >
+        #{f01010250,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010220 != null" >
+        #{f01010220,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010221 != null" >
+        #{f01010221,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010251 != null" >
+        #{f01010251,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010206 != null" >
+        #{f01010206,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010207 != null" >
+        #{f01010207,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010244 != null" >
+        #{f01010244,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010245 != null" >
+        #{f01010245,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010246 != null" >
+        #{f01010246,jdbcType=VARCHAR},
+      </if>
+      <if test="operationType != null" >
+        #{operationType,jdbcType=VARCHAR},
+      </if>
+      <if test="instdate != null" >
+        #{instdate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.threegolden.cbs.cr.entity.primary.SaicRegistry" >
+    update DM_GDSWT.saic_registry
+    <set >
+      <if test="createtime != null" >
+        CREATETIME = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sourceId != null" >
+        source_id = #{sourceId,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010101 != null" >
+        F01010101 = #{f01010101,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010102 != null" >
+        F01010102 = #{f01010102,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010103 != null" >
+        F01010103 = #{f01010103,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010201 != null" >
+        F01010201 = #{f01010201,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010214 != null" >
+        F01010214 = #{f01010214,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010216 != null" >
+        F01010216 = #{f01010216,jdbcType=DATE},
+      </if>
+      <if test="f01010204 != null" >
+        F01010204 = #{f01010204,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010212 != null" >
+        F01010212 = #{f01010212,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010203 != null" >
+        F01010203 = #{f01010203,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010215 != null" >
+        F01010215 = #{f01010215,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010248 != null" >
+        F01010248 = #{f01010248,jdbcType=DATE},
+      </if>
+      <if test="f01010219 != null" >
+        F01010219 = #{f01010219,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010202 != null" >
+        F01010202 = #{f01010202,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010247 != null" >
+        F01010247 = #{f01010247,jdbcType=DATE},
+      </if>
+      <if test="f01010238 != null" >
+        F01010238 = #{f01010238,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010239 != null" >
+        F01010239 = #{f01010239,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010211 != null" >
+        F01010211 = #{f01010211,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010249 != null" >
+        F01010249 = #{f01010249,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010241 != null" >
+        F01010241 = #{f01010241,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010242 != null" >
+        F01010242 = #{f01010242,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010243 != null" >
+        F01010243 = #{f01010243,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010250 != null" >
+        F01010250 = #{f01010250,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010220 != null" >
+        F01010220 = #{f01010220,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010221 != null" >
+        F01010221 = #{f01010221,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010251 != null" >
+        F01010251 = #{f01010251,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010206 != null" >
+        F01010206 = #{f01010206,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010207 != null" >
+        F01010207 = #{f01010207,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010244 != null" >
+        F01010244 = #{f01010244,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010245 != null" >
+        F01010245 = #{f01010245,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010246 != null" >
+        F01010246 = #{f01010246,jdbcType=VARCHAR},
+      </if>
+      <if test="operationType != null" >
+        operation_type = #{operationType,jdbcType=VARCHAR},
+      </if>
+      <if test="instdate != null" >
+        INSTDATE = #{instdate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where tracing_source = #{tracingSource,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.threegolden.cbs.cr.entity.primary.SaicRegistry" >
+    update DM_GDSWT.saic_registry
+    set CREATETIME = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      source_id = #{sourceId,jdbcType=VARCHAR},
+      F01010101 = #{f01010101,jdbcType=VARCHAR},
+      F01010102 = #{f01010102,jdbcType=VARCHAR},
+      F01010103 = #{f01010103,jdbcType=VARCHAR},
+      F01010201 = #{f01010201,jdbcType=VARCHAR},
+      F01010214 = #{f01010214,jdbcType=VARCHAR},
+      F01010216 = #{f01010216,jdbcType=DATE},
+      F01010204 = #{f01010204,jdbcType=VARCHAR},
+      F01010212 = #{f01010212,jdbcType=VARCHAR},
+      F01010203 = #{f01010203,jdbcType=VARCHAR},
+      F01010215 = #{f01010215,jdbcType=VARCHAR},
+      F01010248 = #{f01010248,jdbcType=DATE},
+      F01010219 = #{f01010219,jdbcType=VARCHAR},
+      F01010202 = #{f01010202,jdbcType=VARCHAR},
+      F01010247 = #{f01010247,jdbcType=DATE},
+      F01010238 = #{f01010238,jdbcType=VARCHAR},
+      F01010239 = #{f01010239,jdbcType=VARCHAR},
+      F01010211 = #{f01010211,jdbcType=VARCHAR},
+      F01010249 = #{f01010249,jdbcType=VARCHAR},
+      F01010241 = #{f01010241,jdbcType=VARCHAR},
+      F01010242 = #{f01010242,jdbcType=VARCHAR},
+      F01010243 = #{f01010243,jdbcType=VARCHAR},
+      F01010250 = #{f01010250,jdbcType=VARCHAR},
+      F01010220 = #{f01010220,jdbcType=VARCHAR},
+      F01010221 = #{f01010221,jdbcType=VARCHAR},
+      F01010251 = #{f01010251,jdbcType=VARCHAR},
+      F01010206 = #{f01010206,jdbcType=VARCHAR},
+      F01010207 = #{f01010207,jdbcType=VARCHAR},
+      F01010244 = #{f01010244,jdbcType=VARCHAR},
+      F01010245 = #{f01010245,jdbcType=VARCHAR},
+      F01010246 = #{f01010246,jdbcType=VARCHAR},
+      operation_type = #{operationType,jdbcType=VARCHAR},
+      INSTDATE = #{instdate,jdbcType=VARCHAR}
+    where tracing_source = #{tracingSource,jdbcType=INTEGER}
+  </update>
+
+  <select id="getByUnio" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from DM_GDSWT.saic_registry
+    where F01010103  = #{unio,jdbcType=VARCHAR}
+  </select>
+  <select id="getByRegNo" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from DM_GDSWT.saic_registry
+    where F01010201  = #{regNo,jdbcType=VARCHAR}
+
+  </select>
+
+  <select id="getNext" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from DM_GDSWT.saic_registry
+    where tracing_source &gt;  #{cur,jdbcType=INTEGER} and tracing_source &lt;= #{next,jdbcType=INTEGER}
+
+  </select>
+
+  <select id="maxId" resultType="java.lang.Integer">
+    select max(tracing_source) from DM_GDSWT.saic_registry
+  </select>
+</mapper>

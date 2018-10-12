@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.threegolden.cbs.cr.mapper.primary.PubPenaltyMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.threegolden.cbs.cr.entity.primary.PubPenalty" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="F01010101" property="f01010101" jdbcType="VARCHAR" />
+    <result column="F01010102" property="f01010102" jdbcType="VARCHAR" />
+    <result column="F01010103" property="f01010103" jdbcType="VARCHAR" />
+    <result column="F01010201" property="f01010201" jdbcType="VARCHAR" />
+    <result column="cf_wsh" property="cfWsh" jdbcType="VARCHAR" />
+    <result column="cf_cfmc" property="cfCfmc" jdbcType="VARCHAR" />
+    <result column="cf_cflb1" property="cfCflb1" jdbcType="VARCHAR" />
+    <result column="cf_sy" property="cfSy" jdbcType="VARCHAR" />
+    <result column="cf_yj" property="cfYj" jdbcType="VARCHAR" />
+    <result column="cf_xdr_mc" property="cfXdrMc" jdbcType="VARCHAR" />
+    <result column="cf_xdr_shxym" property="cfXdrShxym" jdbcType="VARCHAR" />
+    <result column="cf_xdr_zdm" property="cfXdrZdm" jdbcType="VARCHAR" />
+    <result column="cf_xdr_swdj" property="cfXdrSwdj" jdbcType="VARCHAR" />
+    <result column="cf_xdr_gsdj" property="cfXdrGsdj" jdbcType="VARCHAR" />
+    <result column="cf_fr" property="cfFr" jdbcType="VARCHAR" />
+    <result column="cf_jg" property="cfJg" jdbcType="VARCHAR" />
+    <result column="cf_jdrq" property="cfJdrq" jdbcType="TIMESTAMP" />
+    <result column="cf_xzjg" property="cfXzjg" jdbcType="VARCHAR" />
+    <result column="cf_zt" property="cfZt" jdbcType="CHAR" />
+    <result column="sjc" property="sjc" jdbcType="TIMESTAMP" />
+    <result column="infoSource" property="infosource" jdbcType="VARCHAR" />
+    <result column="gather_time" property="gatherTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, F01010101, F01010102, F01010103, F01010201, cf_wsh, cf_cfmc, cf_cflb1, cf_sy, 
+    cf_yj, cf_xdr_mc, cf_xdr_shxym, cf_xdr_zdm, cf_xdr_swdj, cf_xdr_gsdj, cf_fr, cf_jg, 
+    cf_jdrq, cf_xzjg, cf_zt, sjc, infoSource, gather_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from xzcfxx
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from xzcfxx
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.threegolden.cbs.cr.entity.primary.PubPenalty" >
+    insert into xzcfxx (id, F01010101, F01010102, 
+      F01010103, F01010201, cf_wsh, 
+      cf_cfmc, cf_cflb1, cf_sy, 
+      cf_yj, cf_xdr_mc, cf_xdr_shxym, 
+      cf_xdr_zdm, cf_xdr_swdj, cf_xdr_gsdj, 
+      cf_fr, cf_jg, cf_jdrq, 
+      cf_xzjg, cf_zt, sjc, infoSource, 
+      gather_time)
+    values (#{id,jdbcType=INTEGER}, #{f01010101,jdbcType=VARCHAR}, #{f01010102,jdbcType=VARCHAR}, 
+      #{f01010103,jdbcType=VARCHAR}, #{f01010201,jdbcType=VARCHAR}, #{cfWsh,jdbcType=VARCHAR}, 
+      #{cfCfmc,jdbcType=VARCHAR}, #{cfCflb1,jdbcType=VARCHAR}, #{cfSy,jdbcType=VARCHAR}, 
+      #{cfYj,jdbcType=VARCHAR}, #{cfXdrMc,jdbcType=VARCHAR}, #{cfXdrShxym,jdbcType=VARCHAR}, 
+      #{cfXdrZdm,jdbcType=VARCHAR}, #{cfXdrSwdj,jdbcType=VARCHAR}, #{cfXdrGsdj,jdbcType=VARCHAR}, 
+      #{cfFr,jdbcType=VARCHAR}, #{cfJg,jdbcType=VARCHAR}, #{cfJdrq,jdbcType=TIMESTAMP}, 
+      #{cfXzjg,jdbcType=VARCHAR}, #{cfZt,jdbcType=CHAR}, #{sjc,jdbcType=TIMESTAMP}, #{infosource,jdbcType=VARCHAR}, 
+      #{gatherTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.threegolden.cbs.cr.entity.primary.PubPenalty" >
+    insert into xzcfxx
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="f01010101 != null" >
+        F01010101,
+      </if>
+      <if test="f01010102 != null" >
+        F01010102,
+      </if>
+      <if test="f01010103 != null" >
+        F01010103,
+      </if>
+      <if test="f01010201 != null" >
+        F01010201,
+      </if>
+      <if test="cfWsh != null" >
+        cf_wsh,
+      </if>
+      <if test="cfCfmc != null" >
+        cf_cfmc,
+      </if>
+      <if test="cfCflb1 != null" >
+        cf_cflb1,
+      </if>
+      <if test="cfSy != null" >
+        cf_sy,
+      </if>
+      <if test="cfYj != null" >
+        cf_yj,
+      </if>
+      <if test="cfXdrMc != null" >
+        cf_xdr_mc,
+      </if>
+      <if test="cfXdrShxym != null" >
+        cf_xdr_shxym,
+      </if>
+      <if test="cfXdrZdm != null" >
+        cf_xdr_zdm,
+      </if>
+      <if test="cfXdrSwdj != null" >
+        cf_xdr_swdj,
+      </if>
+      <if test="cfXdrGsdj != null" >
+        cf_xdr_gsdj,
+      </if>
+      <if test="cfFr != null" >
+        cf_fr,
+      </if>
+      <if test="cfJg != null" >
+        cf_jg,
+      </if>
+      <if test="cfJdrq != null" >
+        cf_jdrq,
+      </if>
+      <if test="cfXzjg != null" >
+        cf_xzjg,
+      </if>
+      <if test="cfZt != null" >
+        cf_zt,
+      </if>
+      <if test="sjc != null" >
+        sjc,
+      </if>
+      <if test="infosource != null" >
+        infoSource,
+      </if>
+      <if test="gatherTime != null" >
+        gather_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="f01010101 != null" >
+        #{f01010101,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010102 != null" >
+        #{f01010102,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010103 != null" >
+        #{f01010103,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010201 != null" >
+        #{f01010201,jdbcType=VARCHAR},
+      </if>
+      <if test="cfWsh != null" >
+        #{cfWsh,jdbcType=VARCHAR},
+      </if>
+      <if test="cfCfmc != null" >
+        #{cfCfmc,jdbcType=VARCHAR},
+      </if>
+      <if test="cfCflb1 != null" >
+        #{cfCflb1,jdbcType=VARCHAR},
+      </if>
+      <if test="cfSy != null" >
+        #{cfSy,jdbcType=VARCHAR},
+      </if>
+      <if test="cfYj != null" >
+        #{cfYj,jdbcType=VARCHAR},
+      </if>
+      <if test="cfXdrMc != null" >
+        #{cfXdrMc,jdbcType=VARCHAR},
+      </if>
+      <if test="cfXdrShxym != null" >
+        #{cfXdrShxym,jdbcType=VARCHAR},
+      </if>
+      <if test="cfXdrZdm != null" >
+        #{cfXdrZdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cfXdrSwdj != null" >
+        #{cfXdrSwdj,jdbcType=VARCHAR},
+      </if>
+      <if test="cfXdrGsdj != null" >
+        #{cfXdrGsdj,jdbcType=VARCHAR},
+      </if>
+      <if test="cfFr != null" >
+        #{cfFr,jdbcType=VARCHAR},
+      </if>
+      <if test="cfJg != null" >
+        #{cfJg,jdbcType=VARCHAR},
+      </if>
+      <if test="cfJdrq != null" >
+        #{cfJdrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cfXzjg != null" >
+        #{cfXzjg,jdbcType=VARCHAR},
+      </if>
+      <if test="cfZt != null" >
+        #{cfZt,jdbcType=CHAR},
+      </if>
+      <if test="sjc != null" >
+        #{sjc,jdbcType=TIMESTAMP},
+      </if>
+      <if test="infosource != null" >
+        #{infosource,jdbcType=VARCHAR},
+      </if>
+      <if test="gatherTime != null" >
+        #{gatherTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.threegolden.cbs.cr.entity.primary.PubPenalty" >
+    update xzcfxx
+    <set >
+      <if test="f01010101 != null" >
+        F01010101 = #{f01010101,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010102 != null" >
+        F01010102 = #{f01010102,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010103 != null" >
+        F01010103 = #{f01010103,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010201 != null" >
+        F01010201 = #{f01010201,jdbcType=VARCHAR},
+      </if>
+      <if test="cfWsh != null" >
+        cf_wsh = #{cfWsh,jdbcType=VARCHAR},
+      </if>
+      <if test="cfCfmc != null" >
+        cf_cfmc = #{cfCfmc,jdbcType=VARCHAR},
+      </if>
+      <if test="cfCflb1 != null" >
+        cf_cflb1 = #{cfCflb1,jdbcType=VARCHAR},
+      </if>
+      <if test="cfSy != null" >
+        cf_sy = #{cfSy,jdbcType=VARCHAR},
+      </if>
+      <if test="cfYj != null" >
+        cf_yj = #{cfYj,jdbcType=VARCHAR},
+      </if>
+      <if test="cfXdrMc != null" >
+        cf_xdr_mc = #{cfXdrMc,jdbcType=VARCHAR},
+      </if>
+      <if test="cfXdrShxym != null" >
+        cf_xdr_shxym = #{cfXdrShxym,jdbcType=VARCHAR},
+      </if>
+      <if test="cfXdrZdm != null" >
+        cf_xdr_zdm = #{cfXdrZdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cfXdrSwdj != null" >
+        cf_xdr_swdj = #{cfXdrSwdj,jdbcType=VARCHAR},
+      </if>
+      <if test="cfXdrGsdj != null" >
+        cf_xdr_gsdj = #{cfXdrGsdj,jdbcType=VARCHAR},
+      </if>
+      <if test="cfFr != null" >
+        cf_fr = #{cfFr,jdbcType=VARCHAR},
+      </if>
+      <if test="cfJg != null" >
+        cf_jg = #{cfJg,jdbcType=VARCHAR},
+      </if>
+      <if test="cfJdrq != null" >
+        cf_jdrq = #{cfJdrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cfXzjg != null" >
+        cf_xzjg = #{cfXzjg,jdbcType=VARCHAR},
+      </if>
+      <if test="cfZt != null" >
+        cf_zt = #{cfZt,jdbcType=CHAR},
+      </if>
+      <if test="sjc != null" >
+        sjc = #{sjc,jdbcType=TIMESTAMP},
+      </if>
+      <if test="infosource != null" >
+        infoSource = #{infosource,jdbcType=VARCHAR},
+      </if>
+      <if test="gatherTime != null" >
+        gather_time = #{gatherTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.threegolden.cbs.cr.entity.primary.PubPenalty" >
+    update xzcfxx
+    set F01010101 = #{f01010101,jdbcType=VARCHAR},
+      F01010102 = #{f01010102,jdbcType=VARCHAR},
+      F01010103 = #{f01010103,jdbcType=VARCHAR},
+      F01010201 = #{f01010201,jdbcType=VARCHAR},
+      cf_wsh = #{cfWsh,jdbcType=VARCHAR},
+      cf_cfmc = #{cfCfmc,jdbcType=VARCHAR},
+      cf_cflb1 = #{cfCflb1,jdbcType=VARCHAR},
+      cf_sy = #{cfSy,jdbcType=VARCHAR},
+      cf_yj = #{cfYj,jdbcType=VARCHAR},
+      cf_xdr_mc = #{cfXdrMc,jdbcType=VARCHAR},
+      cf_xdr_shxym = #{cfXdrShxym,jdbcType=VARCHAR},
+      cf_xdr_zdm = #{cfXdrZdm,jdbcType=VARCHAR},
+      cf_xdr_swdj = #{cfXdrSwdj,jdbcType=VARCHAR},
+      cf_xdr_gsdj = #{cfXdrGsdj,jdbcType=VARCHAR},
+      cf_fr = #{cfFr,jdbcType=VARCHAR},
+      cf_jg = #{cfJg,jdbcType=VARCHAR},
+      cf_jdrq = #{cfJdrq,jdbcType=TIMESTAMP},
+      cf_xzjg = #{cfXzjg,jdbcType=VARCHAR},
+      cf_zt = #{cfZt,jdbcType=CHAR},
+      sjc = #{sjc,jdbcType=TIMESTAMP},
+      infoSource = #{infosource,jdbcType=VARCHAR},
+      gather_time = #{gatherTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <insert id="batchInsert">
+    insert into xzcfxx
+    (   F01010101, F01010102, F01010103, F01010201, cf_wsh, cf_cfmc, cf_cflb1, cf_sy,
+    cf_yj, cf_xdr_mc, cf_xdr_shxym, cf_xdr_zdm, cf_xdr_swdj, cf_xdr_gsdj, cf_fr, cf_jg,
+    cf_jdrq, cf_xzjg, cf_zt, sjc, infoSource, gather_time)
+    values
+    <foreach collection="list" index="index" item="data" separator=",">
+      ( #{data.f01010101,jdbcType=VARCHAR}, #{data.f01010102,jdbcType=VARCHAR},
+      #{data.f01010103,jdbcType=VARCHAR}, #{data.f01010201,jdbcType=VARCHAR}, #{data.cfWsh,jdbcType=VARCHAR},
+      #{data.cfCfmc,jdbcType=VARCHAR}, #{data.cfCflb1,jdbcType=VARCHAR}, #{data.cfSy,jdbcType=VARCHAR},
+      #{data.cfYj,jdbcType=VARCHAR}, #{data.cfXdrMc,jdbcType=VARCHAR}, #{data.cfXdrShxym,jdbcType=VARCHAR},
+      #{data.cfXdrZdm,jdbcType=VARCHAR}, #{data.cfXdrSwdj,jdbcType=VARCHAR}, #{data.cfXdrGsdj,jdbcType=VARCHAR},
+      #{data.cfFr,jdbcType=VARCHAR}, #{data.cfJg,jdbcType=VARCHAR}, #{data.cfJdrq,jdbcType=TIMESTAMP},
+      #{data.cfXzjg,jdbcType=VARCHAR}, #{data.cfZt,jdbcType=CHAR}, #{data.sjc,jdbcType=TIMESTAMP}, #{data.infosource,jdbcType=VARCHAR},
+      #{data.gatherTime,jdbcType=TIMESTAMP})
+    </foreach>
+
+  </insert>
+</mapper>

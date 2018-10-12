@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.threegolden.cbs.cr.mapper.primary.PubPermissionMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.threegolden.cbs.cr.entity.primary.PubPermission" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="F01010101" property="f01010101" jdbcType="VARCHAR" />
+    <result column="F01010102" property="f01010102" jdbcType="VARCHAR" />
+    <result column="F01010103" property="f01010103" jdbcType="VARCHAR" />
+    <result column="F01010201" property="f01010201" jdbcType="VARCHAR" />
+    <result column="xk_wsh" property="xkWsh" jdbcType="VARCHAR" />
+    <result column="xk_xmmc" property="xkXmmc" jdbcType="VARCHAR" />
+    <result column="xk_splb" property="xkSplb" jdbcType="VARCHAR" />
+    <result column="xk_nr" property="xkNr" jdbcType="VARCHAR" />
+    <result column="xk_xdr" property="xkXdr" jdbcType="VARCHAR" />
+    <result column="xk_xdr_shxym" property="xkXdrShxym" jdbcType="VARCHAR" />
+    <result column="xk_xdr_gsdj" property="xkXdrGsdj" jdbcType="VARCHAR" />
+    <result column="xk_fr" property="xkFr" jdbcType="VARCHAR" />
+    <result column="xk_jdrq" property="xkJdrq" jdbcType="TIMESTAMP" />
+    <result column="xk_jzq" property="xkJzq" jdbcType="TIMESTAMP" />
+    <result column="xk_xzjg" property="xkXzjg" jdbcType="VARCHAR" />
+    <result column="xk_zt" property="xkZt" jdbcType="CHAR" />
+    <result column="sjc" property="sjc" jdbcType="TIMESTAMP" />
+    <result column="infoSource" property="infosource" jdbcType="VARCHAR" />
+    <result column="gather_time" property="gatherTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, F01010101, F01010102, F01010103, F01010201, xk_wsh, xk_xmmc, xk_splb, xk_nr, 
+    xk_xdr, xk_xdr_shxym, xk_xdr_gsdj, xk_fr, xk_jdrq, xk_jzq, xk_xzjg, xk_zt, sjc, infoSource, 
+    gather_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from xzxkxx
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from xzxkxx
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.threegolden.cbs.cr.entity.primary.PubPermission" >
+    insert into xzxkxx (id, F01010101, F01010102, 
+      F01010103, F01010201, xk_wsh, 
+      xk_xmmc, xk_splb, xk_nr, 
+      xk_xdr, xk_xdr_shxym, xk_xdr_gsdj, 
+      xk_fr, xk_jdrq, xk_jzq, 
+      xk_xzjg, xk_zt, sjc, infoSource, 
+      gather_time)
+    values (#{id,jdbcType=INTEGER}, #{f01010101,jdbcType=VARCHAR}, #{f01010102,jdbcType=VARCHAR}, 
+      #{f01010103,jdbcType=VARCHAR}, #{f01010201,jdbcType=VARCHAR}, #{xkWsh,jdbcType=VARCHAR}, 
+      #{xkXmmc,jdbcType=VARCHAR}, #{xkSplb,jdbcType=VARCHAR}, #{xkNr,jdbcType=VARCHAR}, 
+      #{xkXdr,jdbcType=VARCHAR}, #{xkXdrShxym,jdbcType=VARCHAR}, #{xkXdrGsdj,jdbcType=VARCHAR}, 
+      #{xkFr,jdbcType=VARCHAR}, #{xkJdrq,jdbcType=TIMESTAMP}, #{xkJzq,jdbcType=TIMESTAMP}, 
+      #{xkXzjg,jdbcType=VARCHAR}, #{xkZt,jdbcType=CHAR}, #{sjc,jdbcType=TIMESTAMP}, #{infosource,jdbcType=VARCHAR}, 
+      #{gatherTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.threegolden.cbs.cr.entity.primary.PubPermission" >
+    insert into xzxkxx
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="f01010101 != null" >
+        F01010101,
+      </if>
+      <if test="f01010102 != null" >
+        F01010102,
+      </if>
+      <if test="f01010103 != null" >
+        F01010103,
+      </if>
+      <if test="f01010201 != null" >
+        F01010201,
+      </if>
+      <if test="xkWsh != null" >
+        xk_wsh,
+      </if>
+      <if test="xkXmmc != null" >
+        xk_xmmc,
+      </if>
+      <if test="xkSplb != null" >
+        xk_splb,
+      </if>
+      <if test="xkNr != null" >
+        xk_nr,
+      </if>
+      <if test="xkXdr != null" >
+        xk_xdr,
+      </if>
+      <if test="xkXdrShxym != null" >
+        xk_xdr_shxym,
+      </if>
+      <if test="xkXdrGsdj != null" >
+        xk_xdr_gsdj,
+      </if>
+      <if test="xkFr != null" >
+        xk_fr,
+      </if>
+      <if test="xkJdrq != null" >
+        xk_jdrq,
+      </if>
+      <if test="xkJzq != null" >
+        xk_jzq,
+      </if>
+      <if test="xkXzjg != null" >
+        xk_xzjg,
+      </if>
+      <if test="xkZt != null" >
+        xk_zt,
+      </if>
+      <if test="sjc != null" >
+        sjc,
+      </if>
+      <if test="infosource != null" >
+        infoSource,
+      </if>
+      <if test="gatherTime != null" >
+        gather_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="f01010101 != null" >
+        #{f01010101,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010102 != null" >
+        #{f01010102,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010103 != null" >
+        #{f01010103,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010201 != null" >
+        #{f01010201,jdbcType=VARCHAR},
+      </if>
+      <if test="xkWsh != null" >
+        #{xkWsh,jdbcType=VARCHAR},
+      </if>
+      <if test="xkXmmc != null" >
+        #{xkXmmc,jdbcType=VARCHAR},
+      </if>
+      <if test="xkSplb != null" >
+        #{xkSplb,jdbcType=VARCHAR},
+      </if>
+      <if test="xkNr != null" >
+        #{xkNr,jdbcType=VARCHAR},
+      </if>
+      <if test="xkXdr != null" >
+        #{xkXdr,jdbcType=VARCHAR},
+      </if>
+      <if test="xkXdrShxym != null" >
+        #{xkXdrShxym,jdbcType=VARCHAR},
+      </if>
+      <if test="xkXdrGsdj != null" >
+        #{xkXdrGsdj,jdbcType=VARCHAR},
+      </if>
+      <if test="xkFr != null" >
+        #{xkFr,jdbcType=VARCHAR},
+      </if>
+      <if test="xkJdrq != null" >
+        #{xkJdrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="xkJzq != null" >
+        #{xkJzq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="xkXzjg != null" >
+        #{xkXzjg,jdbcType=VARCHAR},
+      </if>
+      <if test="xkZt != null" >
+        #{xkZt,jdbcType=CHAR},
+      </if>
+      <if test="sjc != null" >
+        #{sjc,jdbcType=TIMESTAMP},
+      </if>
+      <if test="infosource != null" >
+        #{infosource,jdbcType=VARCHAR},
+      </if>
+      <if test="gatherTime != null" >
+        #{gatherTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.threegolden.cbs.cr.entity.primary.PubPermission" >
+    update xzxkxx
+    <set >
+      <if test="f01010101 != null" >
+        F01010101 = #{f01010101,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010102 != null" >
+        F01010102 = #{f01010102,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010103 != null" >
+        F01010103 = #{f01010103,jdbcType=VARCHAR},
+      </if>
+      <if test="f01010201 != null" >
+        F01010201 = #{f01010201,jdbcType=VARCHAR},
+      </if>
+      <if test="xkWsh != null" >
+        xk_wsh = #{xkWsh,jdbcType=VARCHAR},
+      </if>
+      <if test="xkXmmc != null" >
+        xk_xmmc = #{xkXmmc,jdbcType=VARCHAR},
+      </if>
+      <if test="xkSplb != null" >
+        xk_splb = #{xkSplb,jdbcType=VARCHAR},
+      </if>
+      <if test="xkNr != null" >
+        xk_nr = #{xkNr,jdbcType=VARCHAR},
+      </if>
+      <if test="xkXdr != null" >
+        xk_xdr = #{xkXdr,jdbcType=VARCHAR},
+      </if>
+      <if test="xkXdrShxym != null" >
+        xk_xdr_shxym = #{xkXdrShxym,jdbcType=VARCHAR},
+      </if>
+      <if test="xkXdrGsdj != null" >
+        xk_xdr_gsdj = #{xkXdrGsdj,jdbcType=VARCHAR},
+      </if>
+      <if test="xkFr != null" >
+        xk_fr = #{xkFr,jdbcType=VARCHAR},
+      </if>
+      <if test="xkJdrq != null" >
+        xk_jdrq = #{xkJdrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="xkJzq != null" >
+        xk_jzq = #{xkJzq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="xkXzjg != null" >
+        xk_xzjg = #{xkXzjg,jdbcType=VARCHAR},
+      </if>
+      <if test="xkZt != null" >
+        xk_zt = #{xkZt,jdbcType=CHAR},
+      </if>
+      <if test="sjc != null" >
+        sjc = #{sjc,jdbcType=TIMESTAMP},
+      </if>
+      <if test="infosource != null" >
+        infoSource = #{infosource,jdbcType=VARCHAR},
+      </if>
+      <if test="gatherTime != null" >
+        gather_time = #{gatherTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.threegolden.cbs.cr.entity.primary.PubPermission" >
+    update xzxkxx
+    set F01010101 = #{f01010101,jdbcType=VARCHAR},
+      F01010102 = #{f01010102,jdbcType=VARCHAR},
+      F01010103 = #{f01010103,jdbcType=VARCHAR},
+      F01010201 = #{f01010201,jdbcType=VARCHAR},
+      xk_wsh = #{xkWsh,jdbcType=VARCHAR},
+      xk_xmmc = #{xkXmmc,jdbcType=VARCHAR},
+      xk_splb = #{xkSplb,jdbcType=VARCHAR},
+      xk_nr = #{xkNr,jdbcType=VARCHAR},
+      xk_xdr = #{xkXdr,jdbcType=VARCHAR},
+      xk_xdr_shxym = #{xkXdrShxym,jdbcType=VARCHAR},
+      xk_xdr_gsdj = #{xkXdrGsdj,jdbcType=VARCHAR},
+      xk_fr = #{xkFr,jdbcType=VARCHAR},
+      xk_jdrq = #{xkJdrq,jdbcType=TIMESTAMP},
+      xk_jzq = #{xkJzq,jdbcType=TIMESTAMP},
+      xk_xzjg = #{xkXzjg,jdbcType=VARCHAR},
+      xk_zt = #{xkZt,jdbcType=CHAR},
+      sjc = #{sjc,jdbcType=TIMESTAMP},
+      infoSource = #{infosource,jdbcType=VARCHAR},
+      gather_time = #{gatherTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <insert id="batchInsert">
+    insert into xzxkxx (  F01010101, F01010102, F01010103, F01010201, xk_wsh, xk_xmmc, xk_splb, xk_nr,
+    xk_xdr, xk_xdr_shxym, xk_xdr_gsdj, xk_fr, xk_jdrq, xk_jzq, xk_xzjg, xk_zt, sjc, infoSource,
+    gather_time) VALUES
+    <foreach collection="list" index="index" item="data" separator=",">
+      ( #{data.f01010101,jdbcType=VARCHAR}, #{data.f01010102,jdbcType=VARCHAR},
+      #{data.f01010103,jdbcType=VARCHAR}, #{data.f01010201,jdbcType=VARCHAR}, #{data.xkWsh,jdbcType=VARCHAR},
+      #{data.xkXmmc,jdbcType=VARCHAR}, #{data.xkSplb,jdbcType=VARCHAR}, #{data.xkNr,jdbcType=VARCHAR},
+      #{data.xkXdr,jdbcType=VARCHAR}, #{data.xkXdrShxym,jdbcType=VARCHAR}, #{data.xkXdrGsdj,jdbcType=VARCHAR},
+      #{data.xkFr,jdbcType=VARCHAR}, #{data.xkJdrq,jdbcType=TIMESTAMP}, #{data.xkJzq,jdbcType=TIMESTAMP},
+      #{data.xkXzjg,jdbcType=VARCHAR}, #{data.xkZt,jdbcType=CHAR}, #{data.sjc,jdbcType=TIMESTAMP}, #{data.infosource,jdbcType=VARCHAR},
+      #{data.gatherTime,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+</mapper>
